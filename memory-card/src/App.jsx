@@ -6,6 +6,8 @@ import { HeaderComponent } from "./components/HeaderComponent";
 
 import { MainComponent } from "./components/MainComponent";
 
+import { shuffleArray } from "./helper/shuffleArray";
+
 import "./App.css";
 
 function App() {
