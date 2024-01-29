@@ -8,8 +8,6 @@ import { MainComponent } from "./components/MainComponent";
 
 import { shuffleArray } from "./helper/shuffleArray";
 
-import "./App.css";
-
 function App() {
   const [shuffleImg, setShuffleImg] = useState(pokemonImages);
 
@@ -18,6 +16,16 @@ function App() {
   const [highestScore, setHighestScore] = useState(0);
 
   const [pokemonCard, setPokemonCard] = useState([]);
+
+  function handleClick(pokemon) {
+    const shuffledArray = shuffleArray([...shuffleImg]);
+    setShuffleImg(shuffledArray);
+    if (!pokemonCard.includes(pokemon.id)) {
+      setPokemonCard([...pokemonCard, pokemon.id]);
+    } else {
+      setPokemonCard([]);
+    }
+  }
 
   return (
     <>
@@ -28,8 +36,12 @@ function App() {
       ></HeaderComponent>
       <MainComponent>
         <div className="cardContainer">
-          {pokemonImages.map((pokemon) => (
-            <div className="card" key={pokemon.id}>
+          {shuffleImg.map((pokemon) => (
+            <div
+              className="card"
+              key={pokemon.id}
+              onClick={() => handleClick(pokemon)}
+            >
               <div className="imgContainer">
                 <img src={pokemon.img} alt={pokemon.name} />
               </div>
