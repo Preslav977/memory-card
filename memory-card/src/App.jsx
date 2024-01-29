@@ -17,13 +17,24 @@ function App() {
 
   const [pokemonCard, setPokemonCard] = useState([]);
 
+  function saveHighestScore() {
+    if (highestScore > score) {
+      return highestScore;
+    } else {
+      setHighestScore(score);
+    }
+  }
+
   function handleClick(pokemon) {
     const shuffledArray = shuffleArray([...shuffleImg]);
     setShuffleImg(shuffledArray);
     if (!pokemonCard.includes(pokemon.id)) {
       setPokemonCard([...pokemonCard, pokemon.id]);
+      setScore(score + 1);
     } else {
       setPokemonCard([]);
+      setScore(0);
+      const showHighestScore = saveHighestScore();
     }
   }
 
@@ -33,6 +44,10 @@ function App() {
         gameName="Pokemon Memory Game"
         gameInstructions="Get points by clicking on the pokemon card, 
       but don't click it more than once"
+        gameScore="Score: "
+        showScore={score}
+        gameHighestScore="Best score: "
+        showHeighestScore={highestScore}
       ></HeaderComponent>
       <MainComponent>
         <div className="cardContainer">

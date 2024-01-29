@@ -2,7 +2,9 @@ export function HeaderComponent({
   gameName,
   gameInstructions,
   gameScore,
+  showScore,
   gameHighestScore,
+  showHeighestScore,
 }) {
   return (
     <div className="header-container">
@@ -11,8 +13,12 @@ export function HeaderComponent({
         <p>{gameInstructions}</p>
       </div>
       <div className="scoreContainer">
-        <p className="score">Score: {gameScore}</p>
-        <p>Best Score: {gameHighestScore}</p>
+        <p className="score">
+          {gameScore} {showScore}
+        </p>
+        <p>
+          {gameHighestScore} {showHeighestScore}
+        </p>
       </div>
     </div>
   );
