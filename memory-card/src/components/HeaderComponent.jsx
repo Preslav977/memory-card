@@ -9,14 +9,14 @@ export function HeaderComponent({
   return (
     <div className="header-container">
       <div>
-        <h1 className="gameName">{gameName}</h1>
-        <p>{gameInstructions}</p>
+        <h1 className="game-name">{gameName}</h1>
+        <p className="game-instructions">{gameInstructions}</p>
       </div>
-      <div className="scoreContainer">
+      <div className="score-container">
         <p className="score">
           {gameScore} {showScore}
         </p>
-        <p>
+        <p className="highest-score">
           {gameHighestScore} {showHeighestScore}
         </p>
       </div>

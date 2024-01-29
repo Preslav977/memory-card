@@ -8,6 +8,8 @@ import { MainComponent } from "./components/MainComponent";
 
 import { shuffleArray } from "./helper/shuffleArray";
 
+import "./styles/style.css";
+
 function App() {
   const [shuffleImg, setShuffleImg] = useState(pokemonImages);
 
@@ -50,17 +52,17 @@ function App() {
         showHeighestScore={highestScore}
       ></HeaderComponent>
       <MainComponent>
-        <div className="cardContainer">
+        <div className="card-container">
           {shuffleImg.map((pokemon) => (
             <div
               className="card"
               key={pokemon.id}
               onClick={() => handleClick(pokemon)}
             >
-              <div className="imgContainer">
+              <div className="img-container">
                 <img src={pokemon.img} alt={pokemon.name} />
               </div>
-              <p className="pokemonName">{pokemon.name}</p>
+              <p className="pokemon-name">{pokemon.name}</p>
             </div>
           ))}
         </div>
