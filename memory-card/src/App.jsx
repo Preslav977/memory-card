@@ -11,6 +11,14 @@ import { shuffleArray } from "./helper/shuffleArray";
 import "./App.css";
 
 function App() {
+  const [shuffleImg, setShuffleImg] = useState(pokemonImages);
+
+  const [score, setScore] = useState(0);
+
+  const [highestScore, setHighestScore] = useState(0);
+
+  const [pokemonCard, setPokemonCard] = useState([]);
+
   return (
     <>
       <HeaderComponent
