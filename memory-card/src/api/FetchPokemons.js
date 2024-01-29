@@ -33,7 +33,7 @@ pokemonObjects.forEach((pokemon) =>
   pokemonImages.push({
     id: id++,
     name: pokemon.name,
-    img: pokemon.sprites.other["offical-artwork"].front_default,
+    img: pokemon.sprites.other["official-artwork"].front_default,
   }),
 );
 
